@@ -1,4 +1,4 @@
-# Create `pipenv` Virtual Environment
+# Create `pipenv` Virtual Environment and Install Django
 
 1. Start in project root (the directory which houses all our code)
 
@@ -128,6 +128,24 @@
         PS C:\Users\FlynntKnapp\Programming\view-function-based>
         ```
 
+1. Investigate global installed Python packages
+    - `pip list`
+
+        ```
+        PS C:\Users\FlynntKnapp\Programming\view-function-based> pip list      
+        Package      Version
+        ------------ ----------
+        certifi      2023.11.17
+        distlib      0.3.8
+        filelock     3.13.1
+        pip          24.0
+        pipenv       2023.11.15
+        platformdirs 4.1.0
+        setuptools   69.0.3
+        virtualenv   20.25.0
+        PS C:\Users\FlynntKnapp\Programming\view-function-based>
+        ```
+
 1. Activate `pipenv` virtual environment
 
     - `pipenv shell`
@@ -136,6 +154,18 @@
         PS C:\Users\FlynntKnapp\Programming\view-function-based> pipenv shell
         Launching subshell in virtual environment...
         PowerShell 7.4.1
+        PS C:\Users\FlynntKnapp\Programming\view-function-based>
+        ```
+
+1. Investigate virtual environment installed packages
+
+    - `pip list`
+
+        ```powershell
+        PS C:\Users\FlynntKnapp\Programming\view-function-based> pip list
+        Package    Version
+        ---------- -------
+        pip        23.3.2
         PS C:\Users\FlynntKnapp\Programming\view-function-based>
         ```
 
@@ -172,3 +202,75 @@
 1. Install Django
 
     - `pipenv install django`
+
+        ```
+        PS C:\Users\FlynntKnapp\Programming\view-function-based> pipenv install django
+        Installing django...
+        Resolving django...
+        Added django to Pipfile's [packages] ...
+        Installation Succeeded
+        Pipfile.lock (2110f5) out of date, updating to (e35515)...                                                                                                                                                                                
+        Locking [packages] dependencies...
+        Building requirements...
+        Resolving dependencies...
+        Success!
+        Locking [dev-packages] dependencies...                                                                                                                                                                                                    
+        Updated Pipfile.lock (0b5823de65ff0f5100b8f0fd7642f5000e8f2788c925cc51afe587d419e35515)!
+        Installing dependencies from Pipfile.lock (e35515)...
+        PS C:\Users\FlynntKnapp\Programming\view-function-based>
+        ```
+
+1. Investigate virtual environment installed packages
+
+    - `pip list`
+
+        ```powershell
+        PS C:\Users\FlynntKnapp\Programming\view-function-based> pip list
+        Package  Version
+        -------- -------
+        asgiref  3.7.2
+        Django   5.0.1
+        pip      23.3.2
+        sqlparse 0.4.4
+        tzdata   2023.4
+        PS C:\Users\FlynntKnapp\Programming\view-function-based>
+        ```
+
+1. Exit `pipenv` virtual environment
+    
+    - `exit`
+    
+        ```
+        PS C:\Users\FlynntKnapp\Programming\view-function-based> exit
+        PS C:\Users\FlynntKnapp\Programming\view-function-based>
+        ```
+
+1. See that we are again using the global-installed Python
+
+    - `Get-Command python | Format-List`
+
+        ```
+        PS C:\Users\FlynntKnapp\Programming\view-function-based> get-Command python | Format-List
+
+        Name            : python.exe
+        CommandType     : Application
+        Definition      : C:\Users\FlynntKnapp\AppData\Local\Programs\Python\Python312\python.exe
+        Extension       : .exe
+        Path            : C:\Users\FlynntKnapp\AppData\Local\Programs\Python\Python312\python.exe
+        FileVersionInfo : File:             C:\Users\FlynntKnapp\AppData\Local\Programs\Python\Python312\python.exe
+                        InternalName:     Python Console
+                        OriginalFilename: python.exe
+                        FileVersion:      3.12.1
+                        FileDescription:  Python
+                        Product:          Python
+                        ProductVersion:   3.12.1
+                        Debug:            False
+                        Patched:          False
+                        PreRelease:       False
+                        PrivateBuild:     False
+                        SpecialBuild:     False
+                        Language:         Language Neutral
+
+
+        PS C:\Users\FlynntKnapp\Programming\view-function-based>
+        ```
