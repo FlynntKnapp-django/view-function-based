@@ -1,4 +1,4 @@
-# contianers/apps.py
+# containers/apps.py
 
 from django.apps import AppConfig
 
