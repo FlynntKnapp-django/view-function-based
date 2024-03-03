@@ -161,7 +161,7 @@ from .models import Container
 
 class ContainerListView(ListView):
     """
-    Class-based `ListView` for the `contianers.Container` model.
+    Class-based `ListView` for the `containers.Container` model.
     """
 
     # We provide the `model` attribute to the `ListView` to specify the model and Django
